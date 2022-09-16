@@ -109,13 +109,10 @@ def getAircraftType():
   file = open("AircraftTypes.csv", "r")
   csvreader = csv.reader(file)
   for row in csvreader:
-    print(row[0])
-    print(aircrafttypeuserinput)
     if row[0] == aircrafttypeuserinput:
       aircrafttypeuserinput = aircrafttype
-    else:
-      continue
-  if aircrafttype == "":
+      break
+  if aircrafttypeuserinput != aircrafttype:
     print("NO!")
     getAircraftType()
   else:
